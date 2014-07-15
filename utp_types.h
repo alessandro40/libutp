@@ -66,7 +66,7 @@
 	typedef SSIZE_T ssize_t;
 #endif
 
-#ifdef POSIX
+#if defined(POSIX) || defined(__ANDROID__)
 	typedef struct sockaddr_storage SOCKADDR_STORAGE;
 #endif
 
@@ -86,7 +86,9 @@ typedef unsigned char uint8;
 typedef signed char int8;
 typedef unsigned short uint16;
 typedef signed short int16;
+#ifndef __ANDROID__
 typedef unsigned int uint;
+#endif
 typedef unsigned int uint32;
 typedef signed int int32;
 
