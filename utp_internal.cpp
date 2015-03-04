@@ -2564,6 +2564,7 @@ utp_socket*	utp_create_socket(utp_context *ctx)
 	conn->inbuf.elements		= (void**)calloc(16, sizeof(void*));
 	conn->ida					= -1;	// set the index of every new socket in ack_sockets to
 										// -1, which also means it is not in ack_sockets yet
+    conn->mtu_last              = 0;                                    
 
 	memset(conn->extensions, 0, sizeof(conn->extensions));
 
